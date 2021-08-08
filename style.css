@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+nav {
+    display: flex;
+    height: 70px;
+    width: 100%;
+    background-color: rgba(42, 44, 57, 0.9);
+    justify-content: space-between;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+    z-index: 1;
+}
+
+.logo {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: -.6rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    left: 0%;
+    margin-top: -.5rem;
+}
+
+#click:checked~ul {
+    left: 0;
+    transition: all .8s ease-out;
+}
+
+nav ul li {
+    padding: 8px 4px;
+}
+
+nav ul li a {
+    font-size: 15px;
+    text-decoration: none;
+    padding: 12px 16px;
+    color: white;
+    font-weight: 500;
+    /* letter-spacing: 1px; */
+}
+
+nav ul li:hover {
+    background: #ef6603;
+    padding: 8px 4px;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    z-index: 10000000000;
+}
+
+.fa-bars:before {
+    content: "\f0c9";
+    margin-right: -4rem;
+}
+
+nav ul li a:hover {
+    color: #2a2c39;
+}
+
+.menu-btn i {
+    display: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    left: 33%;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+@media (max-width: 985px) {
+    .menu-btn i {
+        display: block;
+    }
+    nav ul {
+        /* overflow: scroll; */
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background: #160c0c;
+        height: 100vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        transition: all 0.3s ease;
+        /* z-index: 1000000; */
+        /* z-index: 100000; */
+        /* margin: 2px; */
+        /* margin: 0 18px;
+        margin-top: 0%; */
+        /* border-radius: 4px; */
+    }
+    #click:checked~ul {
+        left: 0;
+        overflow-y: scroll;
+    }
+    nav ul li {
+        margin: 30px 0;
+    }
+    nav ul li a {
+        color: cyan;
+        font-size: 20px;
+        /* color: #fbfbfb; */
+        display: blocks;
+    }
+    nav ul li:hover {
+        background: orange;
+        color: cyan;
+    }
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 86vh;
+    background: #33364a;
+    overflow: hidden;
+}
+
+section .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    /* qrhe8ruhyeitru8hyert8eyhroieuroerueorueorueroiruhewry */
+    background: url(wave.png);
+    background-size: 3000px 110px;
+}
+
+section .wave.wave1 {
+    animation: animate 25s linear infinite;
+    z-index: 5;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+section .wave.wave2 {
+    animation: animate2 20s linear infinite;
+    z-index: 4;
+    opacity: 0.6;
+    animation-delay: -5s;
+    bottom: 5px;
+}
+
+section .wave.wave3 {
+    animation: animate 20s linear infinite;
+    z-index: 3;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 1px;
+}
+
+section .wave.wave4 {
+    animation: animate2 10s linear infinite;
+    z-index: 2;
+    opacity: 0.4;
+    animation-delay: -9s;
+    bottom: 17px;
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 3000px;
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -3000px;
+    }
+}
+
+h5.head {
+    margin-top: 2%;
+    margin-left: 6%;
+    position: relative;
+    color: #aaaaaa;
+}
+
+h5:after {
+    content: "";
+    width: 125px;
+    height: 2px;
+    background: #fd9042;
+    position: absolute;
+    display: block;
+    left: 3.6rem;
+    top: 45%;
+}
+
+h1.head {
+    color: #2a2c39;
+    margin-top: .4rem;
+    margin-left: 6%;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.carousel {
+    background: #33364a;
+    top: 22%;
+}
+
+.carousel-cell {
+    width: 100%;
+    padding: 0 12%;
+    height: min-content;
+    align-items: center;
+    /* margin-right: 10px; */
+    background: #33364a;
+    border-radius: 5px;
+    counter-increment: gallery-cell;
+}
+
+.carousel-cell:before {
+    display: block;
+    text-align: center;
+    /* content: counter(gallery-cell); */
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}
+
+.cave1 h2,
+.cave2 h2,
+.cave3 h2,
+.cave4 h2,
+.cave5 h2 {
+    text-align: center;
+    color: white;
+    font-size: 49px;
+    margin-bottom: 2%;
+    z-index: 100;
+}
+
+.cave1 p,
+.cave2 p,
+.cave3 p,
+.cave4 p,
+.cave5 p {
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    z-index: 100;
+}
+
+.btn {
+    margin: 2.4% 0;
+    margin-left: -4rem;
+    width: 9rem;
+    /* margin-bottom: 5px; */
+    padding: .7rem 2rem;
+    border: 2px solid #ef6603;
+    border-radius: 50px;
+    background: none;
+    color: white;
+    /* text-align: center; */
+    /* align-items: center; */
+    /* align-content: center; */
+    justify-content: center;
+    cursor: pointer;
+    /* margin-bottom: 1.2rem; */
+    left: 50%;
+    position: relative;
+}
+
+.btn:hover {
+    background: #2a2c39;
+    color: #fd9042;
+    border: 2px solid white;
+}
+
+.gridd {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: #444444;
+    margin-left: 6%;
+    margin-right: 2rem;
+    margin-top: 3rem;
+}
+
+.gri {
+    height: none;
+    background-color: #ffffff;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+
+.gri pol i {
+    color: #ef6603;
+}
+
+@media (max-width: 900px) {
+    .gridd {
+        display: block;
+        font-size: 16px;
+    }
+    .gri {
+        margin-bottom: 38px;
+    }
+}
+
+.rok i {
+    color: #ef6603;
+}
+
+.pol {
+    line-height: 22px;
+}
+
+.roo {
+    margin-top: 20px;
+}
+
+.roo p {
+    margin-top: 10px;
+}
+
+.roo p i {
+    color: #ef6603;
+}
+
+.learn {
+    font-size: 14px;
+    font-weight: bold;
+    padding: .6rem 2rem;
+    margin-top: 3%;
+    border: 1px solid #ef6603;
+    color: #ef6603;
+    border-radius: 4px;
+    transition: all 0.5s ease 0s;
+}
+
+.learn:hover {
+    background-color: #ef6603;
+    color: white;
+    cursor: pointer;
+}
